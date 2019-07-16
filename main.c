@@ -3,10 +3,7 @@
 #include <stdlib.h>
 #include <memory.h>
 #include <string.h>
-
-void    ft_bzero(void *somemen, size_t size);
-void    *ft_memset(void *somemen, char val, size_t size);
-int     ft_isalpha(char c);
+#include "libftasm.h"
 
 int     main(void)
 {
