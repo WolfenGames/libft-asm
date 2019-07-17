@@ -50,7 +50,7 @@ rcr           reg         ,op2                    ;reg:CF <-- reg:CF decalageCir
 ;CONDITIONS Actions
 cmp           op1         ,op2      ;(1)a faire en premier
 jmp           op                    ;(1)branchement inconditionnel a ladresse op
-;-------------------------------------------------------------------------------
+;------------------------------------------------------------------------------
 je            op                    ;(2)branchement a l’adresse op si op1 = op2
 jne           op                    ;(2)branchement a l’adresse op si op1 != op2
 jl            op                    ;(2)branchement a l’adresse op si op1 < op2

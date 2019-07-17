@@ -7,8 +7,11 @@
 
 int     main(void)
 {
-    for (int i = 0; i < 128; i++)
-        printf("%c: %i\n", i, ft_isalpha(i));
+	char *a = strdup("Hello World");
+	printf("Start\n");
+	puts(a);
+	ft_puts(a);
+	printf("End\n");
 
     return 0;
 }
