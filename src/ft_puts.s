@@ -1,5 +1,8 @@
 extern _ft_strlen
 
+%define WRITE	0x2000004
+%define STDOUT	1
+
 global _ft_puts
 
 section .text
@@ -15,12 +18,12 @@ _ft_puts: ; void	ft_puts(char *rdi);
 		mov rsi, rdi
 		mov rdx, rax
 		mov rdi, 1
-		mov rax, 0x2000004
+		mov rax, WRITE
 		syscall
 
 		; write newline
-		mov rdx, 1
-		mov rax, 0x2000004
+		mov rdx, STDOUT
+		mov rax, WRITE
 		lea rsi, [rel nl]
 		syscall
 	; replace rbp from stack
