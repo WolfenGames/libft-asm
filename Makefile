@@ -9,7 +9,7 @@ OS = $(shell uname -s)
 
 FILES= ft_bzero.s ft_memset.s ft_isalpha.s ft_isdigit.s ft_isalnum.s\
 		 ft_isascii.s ft_isprint.s ft_toupper.s ft_tolower.s ft_puts.s \
-		 ft_strlen.s
+		 ft_strlen.s ft_memcpy.s ft_strdup.s
 
 OBJ = $(patsubst %.s, $(OBJDIR)/%.o, $(FILES))
 SRC = $(patsubst %, $(SRCDIR)/%, $(FILES))

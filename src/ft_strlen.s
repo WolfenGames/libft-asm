@@ -1,5 +1,7 @@
 global _ft_strlen
 
+section .text
+
 _ft_strlen:
 	; preserve in stack
 	push rbp

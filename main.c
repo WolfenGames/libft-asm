@@ -7,11 +7,13 @@
 
 int     main(void)
 {
-	char *a = strdup("Hello World");
-	printf("Start\n");
-	puts(a);
-	ft_puts(a);
-	printf("End\n");
+	//char *a = strdup("Hello World");
+	char *a = strdup("hey man");
+	char *b = ft_strdup(a);
+	printf("%s : %s\n", a, b);
+	a[0] = 'z';
+	b[1] = 'z';
+	printf("%s : %s\n", a, b);
 
     return 0;
 }
