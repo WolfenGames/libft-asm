@@ -9,7 +9,7 @@ OS = $(shell uname -s)
 
 FILES= ft_bzero.s ft_memset.s ft_isalpha.s ft_isdigit.s ft_isalnum.s\
 		 ft_isascii.s ft_isprint.s ft_toupper.s ft_tolower.s ft_puts.s \
-		 ft_strlen.s ft_memcpy.s ft_strdup.s
+		 ft_strlen.s ft_memcpy.s ft_strdup.s ft_cat.s
 
 OBJ = $(patsubst %.s, $(OBJDIR)/%.o, $(FILES))
 SRC = $(patsubst %, $(SRCDIR)/%, $(FILES))
@@ -41,7 +41,7 @@ $(OBJDIR):
 
 test: $(NAME) main.c
 	@echo "\x1b[33mLinking\x1b[0m\t\ttest"
-	@clang -Wall -Werror -Wextra -pedantic -O3 main.c $(NAME) -I./includes -o test
+	clang -Wall -Werror -Wextra -pedantic -O3 main.c -I./includes -L -lfasm -o test
 
 clean:
 	@rm -rf $(OBJDIR)

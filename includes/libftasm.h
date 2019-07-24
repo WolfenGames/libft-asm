@@ -15,5 +15,6 @@ int		ft_tolower(int c);
 void	ft_puts(char *s);
 size_t	ft_strlen(char *s);
 char	*ft_strdup(char *s);
+void	ft_cat(const int fd);
 
 #endif
