@@ -10,9 +10,7 @@ int     main(void)
 {
 	const int	fd = open("Makefile", O_RDONLY);
 
-	printf("%d\n", fd);
-
-	ft_cat((const int)fd);
+	printf("BUFF::%zu\n", ft_cat((const int)fd));
 
     return 0;
 }
