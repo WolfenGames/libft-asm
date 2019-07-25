@@ -6,11 +6,11 @@
 #include <fcntl.h>
 #include "libftasm.h"
 
-void	ft_cat(const int fd);
-
 int     main(void)
 {
 	const int	fd = open("Makefile", O_RDONLY);
+
+	printf("%d\n", fd);
 
 	ft_cat((const int)fd);
 
