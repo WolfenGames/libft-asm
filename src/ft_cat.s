@@ -10,13 +10,14 @@ extern _ft_puts
 
 section .text
 
+ALIGN 16
 _ft_cat:
 	push rbp
 	push rbx
 
 	mov rbx, rdi 	;store fd
-	sub rsp, BUFF_SIZE
-	sub rsp, 8
+	; sub rsp, BUFF_SIZE
+	; sub rsp, 8
 
 	jmp .while
 
@@ -43,8 +44,8 @@ _ft_cat:
 		jmp .while
 
 	.exit:
-		add rsp, BUFF_SIZE
-		add rsp, 8
+		; add rsp, BUFF_SIZE
+		; add rsp, 8
 		pop rbx	
 		leave
 		mov rax, BUFF_SIZE
