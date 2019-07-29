@@ -8,9 +8,7 @@
 
 int     main(void)
 {
-	const int	fd = open("Makefile", O_RDONLY);
-
-	printf("BUFF::%zu\n", ft_cat((const int)fd));
-
+	for (int i = -5; i < 20; i++)
+		printf("%i: %d\n", i, ft_clamp(0, 10, i));
     return 0;
 }

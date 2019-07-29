@@ -16,5 +16,10 @@ void	ft_puts(char *s);
 size_t	ft_strlen(char *s);
 char	*ft_strdup(char *s);
 void	ft_cat(const int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putchar(char c);
+void	ft_putstr_fd(char *str, int fd);
+void	ft_putstr(char *str);
+int		ft_clamp(int min, int max, int val);
 
 #endif

@@ -1,7 +1,5 @@
 global _ft_cat
 
-extern _ft_puts
-
 %define SYSCALL(x)	(0x2000000 | x)
 %define READ		3
 %define WRITE		4
@@ -16,8 +14,8 @@ _ft_cat:
 	push rbx
 
 	mov rbx, rdi 	;store fd
-	; sub rsp, BUFF_SIZE
-	; sub rsp, 8
+	sub rsp, BUFF_SIZE
+	sub rsp, 8
 
 	jmp .while
 
@@ -29,7 +27,7 @@ _ft_cat:
 			mov rdx, BUFF_SIZE - 1
 			mov rax, SYSCALL(READ)
 			syscall
-		
+
 		jc .exit 		; exit if error
 		test rax, rax	; Look for termiate
 		je .exit
@@ -44,9 +42,9 @@ _ft_cat:
 		jmp .while
 
 	.exit:
-		; add rsp, BUFF_SIZE
-		; add rsp, 8
-		pop rbx	
+		add rsp, BUFF_SIZE
+		add rsp, 8
+		pop rbx
 		leave
 		mov rax, BUFF_SIZE
 		ret

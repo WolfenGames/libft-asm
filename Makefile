@@ -8,13 +8,14 @@ OBJDIR=obj
 OS = $(shell uname -s)
 
 FILES= ft_bzero.s ft_memset.s ft_isalpha.s ft_isdigit.s ft_isalnum.s\
-		 ft_isascii.s ft_isprint.s ft_toupper.s ft_tolower.s ft_puts.s \
-		 ft_strlen.s ft_memcpy.s ft_strdup.s ft_cat.s
+		ft_isascii.s ft_isprint.s ft_toupper.s ft_tolower.s ft_puts.s \
+		ft_strlen.s ft_memcpy.s ft_strdup.s ft_cat.s ft_putchar_fd.s \
+		ft_putchar.s ft_putstr.s ft_putstr_fd.s ft_clamp.s
 
 OBJ = $(patsubst %.s, $(OBJDIR)/%.o, $(FILES))
 SRC = $(patsubst %, $(SRCDIR)/%, $(FILES))
 
-all: $(OBJDIR) $(NAME)
+all: temp $(OBJDIR) $(NAME)
 
 NASM =
 
@@ -30,6 +31,8 @@ $(NAME): $(OBJ)
 	@ar -rsc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
+temp:
+	@make -p obj
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.s
 	@echo "\x1b[34mCompiling\x1b[0m\t$@\x1b[0m"
