@@ -24,7 +24,7 @@ _ft_puts: ; void	ft_puts(char *rdi);
 		; write string
 		mov rsi, rdi
 		mov rdx, rax
-		mov rdi, 1
+		mov rdi, STDOUT
 		mov rax, WRITE
 		syscall
 

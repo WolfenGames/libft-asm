@@ -15,24 +15,21 @@ FILES= ft_bzero.s ft_memset.s ft_isalpha.s ft_isdigit.s ft_isalnum.s\
 OBJ = $(patsubst %.s, $(OBJDIR)/%.o, $(FILES))
 SRC = $(patsubst %, $(SRCDIR)/%, $(FILES))
 
-all: temp $(OBJDIR) $(NAME)
+all: $(NAME)
 
 NASM =
 
 ifeq ($(OS), Darwin)
-	NASM += ~/.brew/Cellar/nasm/2.14.02/bin/nasm -f macho64 -g
+	NASM += ~/.brew/Cellar/nasm/2.14.02/bin/nasm -f macho64
 endif
 ifeq ($(OS), Linux)
-	NASM += nasm -f elf64 -g
+	NASM += nasm -f elf64
 endif
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJDIR) $(OBJ)
 	@echo "\x1b[32mLinking\x1b[0m\t\t$(NAME)\x1b[0m"
 	@ar -rsc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-
-temp:
-	@make -p obj
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.s
 	@echo "\x1b[34mCompiling\x1b[0m\t$@\x1b[0m"
@@ -44,7 +41,7 @@ $(OBJDIR):
 
 test: $(NAME) main.c
 	@echo "\x1b[33mLinking\x1b[0m\t\ttest"
-	clang -Wall -Werror -Wextra -pedantic -O3 main.c -I./includes $(NAME) -o test
+	@clang -Wall -Werror -Wextra -pedantic -O3 main.c -I./includes $(NAME) -o test
 
 clean:
 	@rm -rf $(OBJDIR)

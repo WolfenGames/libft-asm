@@ -20,13 +20,17 @@ _ft_clamp: ; (min, max, val)
 
 	mov r8, rdx
 	sub r8, rdi
-	and r8, 0x80000000
+	mov r9, 1
+	shl r9, 31
+	and r8, r9
 	cmp r8, 0
 	jne .below_min
 
 	mov r8, rdx
 	sub r8, rsi
-	and r8, 0x80000000
+	mov r9, 1
+	shl r9, 31
+	and r8, r9
 	cmp r8, 0
 	je .above_max
 
