@@ -8,7 +8,9 @@
 
 int     main(void)
 {
-	for (int i = -5; i < 20; i++)
-		printf("%i: %d\n", i, ft_clamp(0, 10, i));
-    return 0;
+	// for (int i = -5; i < 20; i++)
+	// 	printf("%i: %d\n", i, ft_clamp(0, 10, i));
+    puts(NULL);
+	ft_puts(NULL);
+	return 0;
 }

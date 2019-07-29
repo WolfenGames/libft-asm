@@ -11,6 +11,13 @@ _ft_puts: ; void	ft_puts(char *rdi);
 	; preserve rbp in stack
 	push rbp
 	mov rbp, rsp
+	cmp rdi, 0
+	je .null
+	jmp .notnull
+	.null:
+		lea rdi, [rel msg]
+
+	.notnull:
 		; put length of string into rax
 		call _ft_strlen
 
@@ -29,7 +36,10 @@ _ft_puts: ; void	ft_puts(char *rdi);
 	; replace rbp from stack
 	mov rsp, rbp
 	pop rbp
+
 	ret
 
+
 section .data
-nl db 0x0a
+nl	db	0x0a
+msg db	"(null)"
