@@ -1,3 +1,4 @@
+BITS 64
 global _ft_isalnum
 extern _ft_isdigit
 extern _ft_isalpha

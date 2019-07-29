@@ -1,3 +1,4 @@
+BITS 64
 global _ft_isdigit
 
 section .text

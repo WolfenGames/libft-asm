@@ -1,3 +1,4 @@
+BITS 64
 extern _ft_strlen
 
 %define WRITE	0x2000004

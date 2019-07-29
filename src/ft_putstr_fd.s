@@ -1,3 +1,4 @@
+BITS 64
 global _ft_putstr_fd
 
 %define SYSCALL(x)	(0x2000000 | x)

@@ -41,7 +41,7 @@ $(OBJDIR):
 
 test: $(NAME) main.c
 	@echo "\x1b[33mLinking\x1b[0m\t\ttest"
-	@clang -Wall -Werror -Wextra -pedantic -O3 main.c -I./includes $(NAME) -o test
+	clang -Wall -Werror -Wextra -pedantic -O3 main.c -I./includes -L. $(NAME) -o test
 
 clean:
 	@rm -rf $(OBJDIR)

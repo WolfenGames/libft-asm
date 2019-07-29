@@ -1,3 +1,4 @@
+BITS 64
 global _ft_putchar_fd
 
 %define BUFFSIZE	1
@@ -14,6 +15,6 @@ _ft_putchar_fd:
 	mov rdx, BUFFSIZE
 	mov rax, SYSCALL(WRITE)
 	syscall
-
-	leave
+	pop rdi
+	
 	ret

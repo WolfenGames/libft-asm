@@ -1,3 +1,4 @@
+BITS 64
 global _ft_isprint
 
 section .text

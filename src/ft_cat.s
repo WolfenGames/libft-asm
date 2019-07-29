@@ -1,3 +1,4 @@
+BITS 64
 global _ft_cat
 
 %define SYSCALL(x)	(0x2000000 | x)
@@ -45,6 +46,7 @@ _ft_cat:
 		add rsp, BUFF_SIZE
 		add rsp, 8
 		pop rbx
-		leave
+		mov rsp, rbp
+		pop rbp
 		mov rax, BUFF_SIZE
 		ret

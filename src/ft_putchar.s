@@ -1,3 +1,4 @@
+BITS 64
 global _ft_putchar
 
 extern _ft_putchar_fd
