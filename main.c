@@ -1,18 +1,16 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <memory.h>
-#include <string.h>
-#include <fcntl.h>
+#include "fcntl.h"
+#include "unistd.h"
 #include "libftasm.h"
 
-int     main(void)
-{
-	for (int i = -5; i < 20; i++)
-		printf("%i: %d\n", i, ft_clamp(0, 10, i));
-    puts(NULL);
-	ft_puts(NULL);
-	//ft_putchar_fd('C', -1);
+int main(int ac, const char **av) {
+	ft_putchar('\n');
+	ft_putchar('\n');
+	ft_putchar('\n');
 	ft_cat(0);
-	return 0;
+	ft_cat(open("Makefile", O_RDONLY));
+	ft_cat(open(av[0], O_RDONLY));
+	ft_cat(-42);
+	(void)ac;
+	(void)av;
+	return (0);
 }

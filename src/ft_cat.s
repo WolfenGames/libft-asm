@@ -46,7 +46,6 @@ _ft_cat:
 		add rsp, BUFF_SIZE
 		add rsp, 8
 		pop rbx
-		mov rsp, rbp
 		pop rbp
 		mov rax, BUFF_SIZE
 		ret
